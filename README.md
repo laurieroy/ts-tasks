@@ -1,6 +1,8 @@
 # TODO list app
 This react app was written to practice using typescript following a udemy [code-along](https://www.udemy.com/course/typescript-course/), Jun 2023.
 
+CSS is material
+
 <!-- 
 ## To run locally:
 `git clone `
