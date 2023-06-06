@@ -7,8 +7,12 @@ import {
 
 import PropTypes from 'prop-types';
 
-export const Profile: FC = (props: any): ReactElement => {
-  const { name = 'Laurie' } = props;
+interface IProfile {
+  name?: string;
+}
+
+export const Profile: FC<IProfile> = (props): ReactElement => {
+  const { name = 'User' } = props;
 
   return (
     <Box
