@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-
+import PropTypes from 'prop-types';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -42,4 +42,17 @@ export const TaskSelectField: FC<ISelectField> = (
       </Select>
     </FormControl>
   );
+};
+
+TaskSelectField.propTypes = {
+  onChange: PropTypes.func,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  disabled: PropTypes.bool,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }).isRequired,
+  ),
 };
