@@ -1,5 +1,4 @@
 import React, { FC, ReactElement } from 'react';
-import PropTypes from 'prop-types';
 import { Box, Stack, Typography } from '@mui/material';
 
 import { TaskDescriptionField } from './_taskDescriptionField';
@@ -69,5 +68,3 @@ export const CreateTaskForm: FC = (props): ReactElement => {
     </Box>
   );
 };
-
-// createTaskForm.propTypes = {};
