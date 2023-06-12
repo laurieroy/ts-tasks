@@ -1,13 +1,11 @@
 import React, { FC, ReactElement } from 'react';
-import {
-  Avatar,
-  Box,
-  Typography,
-} from '@mui/material';
+import { Avatar, Box, Typography } from '@mui/material';
 import { ITaskCounter } from './interfaces/ITaskCounter';
 import { Status } from '../CreateTaskForm/enums/Status';
 import { emitCorrectBorderColor } from './helpers/emitCorrectBorderColor';
 import { emitCorrectLabel } from './helpers/emitCorrectLabel';
+
+import PropTypes, { number } from 'prop-types';
 
 export const TaskCounter: FC<ITaskCounter> = (
   props,
@@ -48,4 +46,13 @@ export const TaskCounter: FC<ITaskCounter> = (
       </Box>
     </>
   );
+};
+
+TaskCounter.propTypes = {
+  count: PropTypes.number,
+  status: PropTypes.oneOf([
+    Status.todo,
+    Status.inProgress,
+    Status.completed,
+  ]),
 };
