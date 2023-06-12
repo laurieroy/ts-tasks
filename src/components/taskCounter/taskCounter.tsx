@@ -5,8 +5,13 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+import { ITaskCounter } from './interfaces/ITaskCounter';
+import { Status } from '../CreateTaskForm/enums/Status';
 
-export const TaskCounter = () => {
+export const TaskCounter: FC<ITaskCounter> = (
+  props,
+): ReactElement => {
+  const { status = Status.completed, count = 0 } = props;
   return (
     <>
       <Box
