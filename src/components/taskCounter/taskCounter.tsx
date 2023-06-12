@@ -1,5 +1,10 @@
 import React, { FC, ReactElement } from 'react';
-import { Avatar, Box, Grid, Typography } from '@mui/material';
+import {
+  Avatar,
+  Box,
+  Grid,
+  Typography,
+} from '@mui/material';
 
 export const TaskCounter = () => {
   return (
@@ -10,10 +15,28 @@ export const TaskCounter = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Avatar>
-          <Typography>10</Typography>
+        <Avatar
+          sx={{
+            backgroundColor: 'transparent',
+            border: '5px solid',
+            borderColor: 'warning.light',
+            height: '96px',
+            width: '96px',
+            marginBottom: '16px',
+          }}
+        >
+          <Typography color="#fff" variant="h4">
+            10
+          </Typography>
         </Avatar>
-        <Typography>Subtitle</Typography>
+        <Typography
+          color="#fff"
+          fontWeight="bold"
+          fontSize="20px"
+          variant="h5"
+        >
+          Subtitle
+        </Typography>
       </Box>
     </>
   );
