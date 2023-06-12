@@ -2,16 +2,17 @@ import React, { FC, ReactElement } from 'react';
 import {
   Avatar,
   Box,
-  Grid,
   Typography,
 } from '@mui/material';
 import { ITaskCounter } from './interfaces/ITaskCounter';
 import { Status } from '../CreateTaskForm/enums/Status';
+import { emitCorrectBorderColor } from './helpers/emitCorrectBorderColor';
+import { emitCorrectLabel } from './helpers/emitCorrectLabel';
 
 export const TaskCounter: FC<ITaskCounter> = (
   props,
 ): ReactElement => {
-  const { status = Status.completed, count = 0 } = props;
+  const { status = Status.inProgress, count = 0 } = props;
   return (
     <>
       <Box
@@ -24,14 +25,16 @@ export const TaskCounter: FC<ITaskCounter> = (
           sx={{
             backgroundColor: 'transparent',
             border: '5px solid',
-            borderColor: 'warning.light',
+            borderColor: `${emitCorrectBorderColor(
+              status,
+            )}`,
             height: '96px',
             width: '96px',
             marginBottom: '16px',
           }}
         >
           <Typography color="#fff" variant="h4">
-            10
+            {count}
           </Typography>
         </Avatar>
         <Typography
@@ -40,7 +43,7 @@ export const TaskCounter: FC<ITaskCounter> = (
           fontSize="20px"
           variant="h5"
         >
-          Subtitle
+          {emitCorrectLabel(status)}
         </Typography>
       </Box>
     </>
