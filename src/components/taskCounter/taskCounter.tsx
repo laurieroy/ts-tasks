@@ -5,7 +5,7 @@ import { Status } from '../CreateTaskForm/enums/Status';
 import { emitCorrectBorderColor } from './helpers/emitCorrectBorderColor';
 import { emitCorrectLabel } from './helpers/emitCorrectLabel';
 
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const TaskCounter: FC<ITaskCounter> = (
   props,
