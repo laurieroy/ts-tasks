@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import React, { FC, ReactElement } from 'react';
+import { TaskHeader } from './_taskHeader';
 
 export const Task: FC = (): ReactElement => {
   return (
@@ -17,6 +18,9 @@ export const Task: FC = (): ReactElement => {
         border: '1px solid',
         borderColor: 'error.light',
       }}
-    >sdf</Box>
+    >
+      <TaskHeader
+      />
+    </Box>
   );
 };
