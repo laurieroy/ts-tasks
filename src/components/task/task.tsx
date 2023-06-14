@@ -6,6 +6,7 @@ import { ITask } from './interfaces/ITask';
 import { TaskDescription } from './_taskDescription';
 import { TaskFooter } from './_taskFooter';
 import { TaskHeader } from './_taskHeader';
+import PropTypes from 'prop-types';
 
 export const Task: FC<ITask> = (props): ReactElement => {
   const {
@@ -42,4 +43,14 @@ export const Task: FC<ITask> = (props): ReactElement => {
       />
     </Box>
   );
+};
+
+Task.propTypes = {
+  date: PropTypes.instanceOf(Date),
+  description: PropTypes.string,
+  priority: PropTypes.string,
+  status: PropTypes.string,
+  title: PropTypes.string,
+  onClick: PropTypes.func,
+  onStatusChange: PropTypes.func,
 };
